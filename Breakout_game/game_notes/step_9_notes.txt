@@ -1,0 +1,15 @@
+==============STEP 9=============
+The game itself is actually finished, so let's work on polishing it up. We have already added keyboard controls, but we could easily add mouse controls too.
+
+Listening for mouse movement
+Listening for mouse movement is even easier than listening for key presses: all we need is the listener for the mousemove event. Add the following line in the same place as the other event listeners, just below the keyup event:
+=================CODE==================
+
+Anchoring the paddle movement to the mouse movement
+We can update the paddle position based on the pointer coordinates — the following handler function will do exactly that. Add the following function to your code, below the previous line you added:
+==============CODE=================
+In this function we first work out a relativeX value, which is equal to the horizontal mouse position in the viewport (e.clientX) minus the distance between the left edge of the canvas and left edge of the viewport (canvas.offsetLeft) — effectively this is equal to the distance between the canvas left edge and the mouse pointer. If the relative X pointer position is greater than zero and lower than the Canvas width, the pointer is within the Canvas boundaries, and the paddleX position (anchored on the left edge of the paddle) is set to the relativeX value minus half the width of the paddle, so that the movement will actually be relative to the middle of the paddle.
+
+The paddle will now follow the position of the mouse cursor, but since we're restricting the movement to the size of the Canvas, it won't disappear completely off either side.
+
+COMPARE CODE

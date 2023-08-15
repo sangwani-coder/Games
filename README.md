@@ -1,2 +1,4 @@
 # Games
-Tutorial for building 2D games using Pure JavaScritp, HTML and CSS for beginners.
+This repo contains HTML, CSS, and Javascript 2D game tutorials for beginners.
+
+[Breakout game](./Breakout_game)
